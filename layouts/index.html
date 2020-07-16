@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charSet="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>{{.Site.Data.index.site.title}}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css"/>
+</head>
+<body>
+<div>
+    <div style="display:flex;flex-direction:column;min-height:100vh">
+        <nav class="navbar" role="navigation" aria-label="main navigation"
+             style="border-bottom:1px solid rgba(0,0,0, 0.3);background-color:#2add9c">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="/">
+                    <h1 class="has-text-weight-bold has-text-black">{{ .Site.Title }}</h1>
+                </a>
+            </div>
+        </nav>
+        <ul class="container" style="max-width:960px;padding:20px;flex:1">
+            {{ range $.Site.Data.index.links }}
+            <li class="media">
+                <div class="media-content">
+                    <div class="content">
+                        <p>
+                            <a class="has-text-black" target="_blank" href=" {{ .url }}">{{ .title }}</a>
+                            <br/>
+                            <span class="has-text-gray has-text-weight-light is-size-7">
+                                by {{ .by }} <small> {{ .date }}</small> |
+                                {{ .from }}
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </li>
+            {{ end }}
+        </ul>
+        <footer class="footer" style="padding:10px">
+            <div class="content has-text-centered">
+                <p>
+                    {{.Site.Copyright}}
+                </p>
+            </div>
+        </footer>
+    </div>
+</div>
+</body>
+</html>

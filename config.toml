@@ -1,0 +1,5 @@
+baseURL = "https://bilian.news/"
+languageCode = "zh-hans"
+
+title = "碧莲"
+copyright = "2020"
